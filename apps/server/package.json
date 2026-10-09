@@ -1,0 +1,14 @@
+{
+  "name": "@chat/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "@chat/shared": "workspace:*",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5"
+  }
+}

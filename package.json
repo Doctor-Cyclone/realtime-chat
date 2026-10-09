@@ -1,0 +1,22 @@
+{
+  "name": "realtime-chat",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter @chat/shared build",
+    "typecheck": "pnpm --filter @chat/shared typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/ws": "^8.18.1",
+    "prettier": "3.6.2",
+    "typescript": "~5.9.3"
+  }
+}
