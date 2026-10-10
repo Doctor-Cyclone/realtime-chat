@@ -8,10 +8,12 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "build": "pnpm --filter @chat/shared build",
-    "typecheck": "pnpm --filter @chat/shared typecheck",
+    "build": "pnpm --filter @chat/shared build && pnpm --filter @chat/server build",
+    "typecheck": "pnpm --filter @chat/shared build && pnpm --filter @chat/server typecheck",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "dev": "pnpm --filter @chat/shared build && pnpm --filter @chat/server dev",
+    "start": "pnpm --filter @chat/server start"
   },
   "devDependencies": {
     "@types/node": "^22.18.0",
