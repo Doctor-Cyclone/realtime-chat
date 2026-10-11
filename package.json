@@ -8,12 +8,13 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "build": "pnpm --filter @chat/shared build && pnpm --filter @chat/server build",
+    "build": "pnpm --filter @chat/shared build && pnpm --filter @chat/server build && pnpm --filter @chat/client build",
     "typecheck": "pnpm --filter @chat/shared build && pnpm --filter @chat/server --filter @chat/client typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "dev": "pnpm --filter @chat/shared build && pnpm --filter @chat/server dev",
-    "start": "pnpm --filter @chat/server start"
+    "dev": "pnpm --filter @chat/shared build && pnpm --parallel --filter @chat/server --filter @chat/client dev",
+    "start": "pnpm --filter @chat/server start",
+    "preview": "pnpm --filter @chat/client preview"
   },
   "devDependencies": {
     "@types/node": "^22.18.0",
