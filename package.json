@@ -8,11 +8,13 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "build": "pnpm --filter @chat/shared build && pnpm --filter @chat/server build && pnpm --filter @chat/client build",
-    "typecheck": "pnpm --filter @chat/shared build && pnpm --filter @chat/server --filter @chat/client typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "dev": "pnpm --filter @chat/shared build && pnpm --parallel --filter @chat/server --filter @chat/client dev",
+    "build": "pnpm --filter @chat/shared build && pnpm --filter @chat/server build && pnpm --filter @chat/client build",
+    "typecheck": "pnpm --filter @chat/shared build && pnpm -r typecheck && tsc -p tsconfig.test.json",
+    "test": "pnpm --filter @chat/shared build && vitest run",
+    "test:watch": "pnpm --filter @chat/shared build && vitest",
     "start": "pnpm --filter @chat/server start",
     "preview": "pnpm --filter @chat/client preview"
   },
@@ -20,6 +22,8 @@
     "@types/node": "^22.18.0",
     "@types/ws": "^8.18.1",
     "prettier": "3.6.2",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.4",
+    "ws": "^8.18.3"
   }
 }
